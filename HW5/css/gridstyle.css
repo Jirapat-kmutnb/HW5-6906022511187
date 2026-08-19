@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #2b3a4a;
+    color: #333;
+}
+
+/* Main Grid Layout Construction */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main sidebar"
+        "footer footer";
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #81cbfb;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: #0b0e1b;
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navigation */
+nav {
+    grid-area: nav;
+    background-color: #81cbfb;
+    padding: 12px 20px;
+    border-bottom: 2px solid #5ab0e2;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a4f73;
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* Main Content Area */
+main {
+    grid-area: main;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-box {
+    background-color: #a0d8ff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.content-box h2 {
+    color: #0a2540;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.content-box p {
+    color: #1a365d;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.content-box img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+}
+
+/* Sidebar (Form Section) */
+aside {
+    grid-area: sidebar;
+    background-color: #81cbfb;
+    padding: 15px;
+    border-left: 2px solid #5ab0e2;
+}
+
+aside h3 {
+    font-size: 14px;
+    color: #0a2540;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0a2540;
+    margin-bottom: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.radio-group label {
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    margin: 10px 0;
+}
+
+.checkbox-group label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #0a2540;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #000066;
+    color: white;
+    border: none;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #000044;
+}
+
+.form-footer-note {
+    font-size: 10px;
+    color: #1a365d;
+    margin-top: 8px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: #0b0e1b;
+    text-align: center;
+}
+
+footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "sidebar"
+            "footer";
+    }
+    
+    aside {
+        border-left: none;
+        border-top: 2px solid #5ab0e2;
+    }
+}
